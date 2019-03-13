@@ -9,9 +9,11 @@ GIT_BASH_HASH=`curl https://raw.githubusercontent.com/noahShinabarger/programmin
 HISTORICAL_VIM_HASH=`cat ~/.historical_vimrc_hash`
 HISTORICAL_BASH_HASH=`cat ~/.historical_bashrc_hash`
 
-if [ '$LOCAL_VIM_HASH' != '$GIT_VIM_HASH' ]
+if [ $LOCAL_VIM_HASH == $GIT_VIM_HASH ]
 then
-    if [ '$LOCAL_VIM_HASH' == '$HISTORICAL_VIM_HASH' ]
+    echo ".vimrc is up to date!"
+else
+    if [ $LOCAL_VIM_HASH == $HISTORICAL_VIM_HASH ]
     then
         curl https://raw.githubusercontent.com/noahShinabarger/programmingEnvironment/master/.vimrc > ~/.vimrc
     else
@@ -24,9 +26,11 @@ fi
 HISTORICAL_VIM_HASH=`md5sum ~/.vimrc | cut -c 1-32`
 echo $HISTORICAL_VIM_HASH > ~/.historical_vimrc_hash
 
-if [ '$LOCAL_BASH_HASH' != '$GIT_BASH_HASH' ]
+if [ $LOCAL_BASH_HASH == $GIT_BASH_HASH ]
 then
-    if [ '$LOCAL_BASH_HASH' == '$HISTORICAL_BASH_HASH' ]
+    echo ".bashrc is up to date!"
+else
+    if [ $LOCAL_BASH_HASH == $HISTORICAL_BASH_HASH ]
     then
         curl https://raw.githubusercontent.com/noahShinabarger/programmingEnvironment/master/.bashrc > ~/.bashrc
     else
