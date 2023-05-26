@@ -116,10 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-alias sshjohn="ssh john.cedarville.edu"
-alias sshdolos="sshpass -f <(printf '%s\n' 042014) ssh srdesign@163.11.237.127"
-alias ins="sudo apt-get install"
-alias update="sudo apt-get update"
 alias c="clear"
 alias h="history"
 alias vimrc="vim ~/.vimrc"
@@ -128,9 +124,7 @@ alias e="exit"
 alias starWars="telnet towel.blinkenlights.nl"
 alias snake="nsnake"
 alias pingg="~/Downloads/prettyping --nolegend 8.8.8.8"
-alias cdsd="cd ~/code/seniorDesign/"
-alias cdR="cd ~/code/Radiance/"
-alias cdj="cd ~/Documents/Journaling/;ls -to"
+alias cdj="cd ~/Documents/journaling/;ls -to"
 alias cat="bat --paging never"
 alias ping="~/Downloads/prettyping --nolegend"
 
